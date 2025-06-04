@@ -47,3 +47,4 @@ export function addToCart (productId, quantity, button) {
 
     saveToStorage();
    }
+   

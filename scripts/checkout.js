@@ -2,6 +2,7 @@ import {cart, removeFromCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js';
 let cartSummaryHTML = '';
+let cartQuantity = 0;
 
 cart.forEach ((cartItem) => {
   const productId = cartItem.productId
@@ -103,5 +104,23 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
    const container = document.querySelector(
     `.js-cart-item-conteiner-${productId}`
    ).remove()
+   cartQuantity = 0
+    updateCartQuantity()
   })
 })
+
+
+
+
+
+function updateCartQuantity() {
+  cart.forEach((cartItem) => {
+  cartQuantity += cartItem.quantity
+});
+
+document.querySelector('.js-checkout').innerHTML = 
+  `Checkout (<a class="return-to-home-link"
+  href="amazon.html"></a>${cartQuantity})`
+}
+
+updateCartQuantity()
