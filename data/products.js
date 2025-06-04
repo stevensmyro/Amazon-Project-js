@@ -1,5 +1,36 @@
 const products = [
   {
+    id: "bc2847e9-5323-403f-b7cf-57fde0103ee5",
+    image: "images/products/mens-pink-big-assplug-dildo.jpg",
+    name: "Mens pink big butplugg/dildo - 7 inches",
+    rating: {
+      stars: 5,
+      count: 12943
+    },
+    priceCents: 4499,
+    keywords: [
+      "sweaters",
+      "hoodies",
+      "apparel",
+      "mens"
+    ]
+  },
+  {
+    id: "bc2847e9-5323-403f-b7cf-57fde052l14",
+    image: "images/products/nigger-slave-3-pack.jpg",
+    name: "3-pack of nigga slaves ready for sex",
+    rating: {
+      stars: 2.5,
+      count: 5039
+    },
+    priceCents: 999,
+    keywords: [
+      "slaves",
+      "3-pack",
+      "cotton",
+      "niggers"
+    ]
+  }, {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
     name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
@@ -656,5 +687,5 @@ const products = [
       "apparel",
       "mens"
     ]
-  }
+  }   
 ];
