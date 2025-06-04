@@ -1,4 +1,4 @@
-import {cart, removeFromCart} from '../data/cart.js';
+import {cart, removeFromCart, calculateCartQuantity} from '../data/cart.js';
 import {products} from '../data/products.js';
 import {formatCurrency} from './utils/money.js';
 let cartSummaryHTML = '';
@@ -101,10 +101,8 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
   link.addEventListener('click', () => {
    const productId = link.dataset.productId;
    removeFromCart(productId);
-   const container = document.querySelector(
-    `.js-cart-item-conteiner-${productId}`
-   ).remove()
-   cartQuantity = 0
+   const container =
+   document.querySelector(`.js-cart-item-conteiner-${productId}`).remove()
     updateCartQuantity()
   })
 })
@@ -114,13 +112,10 @@ document.querySelectorAll('.js-delete-link').forEach((link) => {
 
 
 function updateCartQuantity() {
-  cart.forEach((cartItem) => {
-  cartQuantity += cartItem.quantity
-});
+  const cartQuantity = calculateCartQuantity()
+  document.querySelector('.js-checkout').innerHTML = 
+    `Checkout (<a class="return-to-home-link"
+    href="amazon.html"></a>${cartQuantity})`
+  }
 
-document.querySelector('.js-checkout').innerHTML = 
-  `Checkout (<a class="return-to-home-link"
-  href="amazon.html"></a>${cartQuantity})`
-}
-
-updateCartQuantity()
+updateCartQuantity();
